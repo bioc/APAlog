@@ -27,5 +27,7 @@ ratio of pairs of pA sites per trancript. Standard error and z score of estimate
 Function to compare the usage of all pairs of poly sites of a transcript
 }
 \examples{
+pA.toy2 <- APAlog::pA.toy2
+pA_design <- APAlog::pA_design
 fit2_pA <- pA_logit_pairwise(pA.toy2, pA.site~cell_line, pA_design, "sample")
 }

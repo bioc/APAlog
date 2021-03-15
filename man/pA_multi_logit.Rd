@@ -4,8 +4,14 @@
 \alias{pA_multi_logit}
 \title{pA_multi_logit}
 \usage{
-pA_multi_logit(data, model, design = NULL, sample_ID = NULL,
-  long_output = FALSE)
+pA_multi_logit(
+  data,
+  model,
+  design = NULL,
+  sample_ID = NULL,
+  long_output = FALSE,
+  adj_method
+)
 }
 \arguments{
 \item{data}{Dataset containing poly A (pA) site read counts. This dataset must have a long shape, meaning that there should be only one
@@ -22,6 +28,10 @@ and a key variable (e.g. sample ID) connecting the \code{data} and \code{design}
 
 \item{long_output}{Logical variable describing output format. FALSE: Only regression coefficients and p-values are reported.
 TRUE: Standard error of regression coefficients, and z scores are also included in the output. Default: FALSE.}
+
+\item{adj_method}{P-value adjustment method.
+Options: "qvalue", "holm", "hochberg", "hommel", "bonferroni", "BH", "BY", "fdr", "none".
+"qvalue" calls the \emph{qvalue} package. Other methods are from base R.}
 }
 \value{
 Log ratios (multinomial logistic regression coefficients) and p-values describing the effect of predictor(s) specified in the model on the usage ratio of each alternative to reference pA site
@@ -38,5 +48,7 @@ If a transcript has n pA sites, n-1 comparisons will be made. Transcripts with o
 before running this function.
 }
 \examples{
-fit1_pA <- pA_multi_logit(pA.toy2, pA.site ~ cell_line, pA_design, "sample")
+pA.toy2 <- APAlog::pA.toy2
+pA_design <- APAlog::pA_design
+fit1_pA <- pA_multi_logit(pA.toy2, pA.site ~ cell_line, pA_design, "sample", long_output = FALSE, adj_method='fdr')
 }

@@ -1,6 +1,6 @@
 Package: APAlog
 Title: Analysis of alternative poly A site usage
-Version: 0.99.1
+Version: 0.99.2
 Authors@R:
     c(person(given = "Hossein",
            family = "Asgharian",
@@ -25,7 +25,7 @@ BugReports: https://github.com/goodarzilab/APAlog/issues
 License: MIT
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1
 Depends:
     R (>= 4.0)
 Imports:

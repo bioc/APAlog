@@ -15,3 +15,6 @@ P-value calculated from the chisq test of deviance between the model and its cor
 \description{
 Calculate the p-value from a deviance test comparing a model to its corresponding null.
 }
+\examples{
+dtest_gfitx <- glm_deviance_test_p(x)
+}

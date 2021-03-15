@@ -21,3 +21,6 @@ Function to compare the usage of all pairs of pA sites of one transcript across 
 \details{
 This function is used inside the pA_logit_pairwise function.
 }
+\examples{
+outxl <- APAlog::pA_logit_1tr_pairs(y, model))
+}

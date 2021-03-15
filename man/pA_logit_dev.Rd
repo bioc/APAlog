@@ -4,7 +4,7 @@
 \alias{pA_logit_dev}
 \title{pA_logit_dev}
 \usage{
-pA_logit_dev(data, model, design = NULL, sample_ID = NULL)
+pA_logit_dev(data, model, design = NULL, sample_ID = NULL, adj_method)
 }
 \arguments{
 \item{data}{Dataset containing poly A (pA) site read counts. This dataset must have a long shape, meaning that there should be only one
@@ -18,6 +18,10 @@ and a key variable (e.g. sample ID) connecting the \code{data} and \code{design}
 \item{design}{(optional) Design matrix. A matrix describing sample attributes which can be used as predictors in the regression model.}
 
 \item{sample_ID}{(optional) A key variable connecting the counts dataset (\code{data}) and the design matrix.}
+
+\item{adj_method}{P-value adjustment method.
+Options: "qvalue", "holm", "hochberg", "hommel", "bonferroni", "BH", "BY", "fdr", "none".
+"qvalue" calls the \emph{qvalue} package. Other methods are from base R.}
 }
 \value{
 Deviance test p-values (one per transcript).
@@ -33,5 +37,7 @@ on the ratio of specific pairs of pA sites, a deviance test reveals the overall
 relevance or informativeness of all the predictors in the model towards the pA site usage pattern for each transcript across samples.
 }
 \examples{
-fit3_pA <- pA_logit_dev(pA.toy2, pA.site ~ cell_line, pA_design, "sample")
+pA.toy2 <- APAlog::pA.toy2
+pA_design <- APAlog::pA_design
+fit3_pA <- pA_logit_dev(pA.toy2, pA.site ~ cell_line, pA_design, "sample", adj_method='fdr')
 }

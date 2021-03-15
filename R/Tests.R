@@ -164,7 +164,7 @@ pA_logit_pairwise <- function(data, model, design = NULL, sample_ID = NULL){
 #' pA.toy2 <- APAlog::pA.toy2
 #' pA_design <- APAlog::pA_design
 #' fit1_pA <- pA_multi_logit(pA.toy2, pA.site ~ cell_line, pA_design, "sample", long_output = FALSE, adj_method='fdr')
-#' fit3_pA_fdr <- adj_p(fit1_pA, pcols = 2, adj_method = "fdr")
+#' fit1_pA_fdr <- adj_p(fit1_pA, pcols = 2, adj_method = "fdr")
 #' @export
 
 adj_p <- function(x, pcols, adj_method){
