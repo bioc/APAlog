@@ -3,6 +3,7 @@
 export(pA_logit_dev)
 export(pA_logit_pairwise)
 export(pA_multi_logit)
+export(adj_p)
 export(volcano_plot)
 import(data.table)
 import(nnet)

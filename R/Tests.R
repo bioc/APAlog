@@ -34,7 +34,7 @@
 #' @examples
 #' pA.toy2 <- APAlog::pA.toy2
 #' pA_design <- APAlog::pA_design
-#' fit1_pA <- pA_multi_logit(pA.toy2, pA.site ~ cell_line, pA_design, "sample", adj_method='fdr')
+#' fit1_pA <- pA_multi_logit(pA.toy2, pA.site ~ cell_line, pA_design, "sample", long_output = FALSE, adj_method='fdr')
 #' @export
 
 pA_multi_logit <- function(data, model, design = NULL, sample_ID = NULL, long_output = FALSE, adj_method){
@@ -81,7 +81,7 @@ pA_multi_logit <- function(data, model, design = NULL, sample_ID = NULL, long_ou
     }
 
     if (adj_method != 'none') {
-        sfitx.com <- adj_p(sfitx.com, pcols = c(6,7), adj_method = adj_method)
+        sfitx.com <- APAlog::adj_p(sfitx.com, pcols = c(6,7), adj_method = adj_method)
     }
     return(sfitx.com)
 }
@@ -161,7 +161,10 @@ pA_logit_pairwise <- function(data, model, design = NULL, sample_ID = NULL){
 #' @details P-values e.g. coming from differential pA site usage on individual genes/transcripts
 #' are correctd for multiple testing.
 #' @examples
-#' fit3_pA_fdr <- adj_p(fit3_pA, pcols = 2, adj_method = "fdr")
+#' pA.toy2 <- APAlog::pA.toy2
+#' pA_design <- APAlog::pA_design
+#' fit1_pA <- pA_multi_logit(pA.toy2, pA.site ~ cell_line, pA_design, "sample", long_output = FALSE, adj_method='fdr')
+#' fit3_pA_fdr <- adj_p(fit1_pA, pcols = 2, adj_method = "fdr")
 #' @export
 
 adj_p <- function(x, pcols, adj_method){
@@ -217,7 +220,7 @@ glm_deviance_test_p <- function(x){
 #' @examples
 #' pA.toy2 <- APAlog::pA.toy2
 #' pA_design <- APAlog::pA_design
-#' fit3_pA <- pA_logit_dev(pA.toy2, pA.site ~ cell_line, pA_design, "sample")
+#' fit3_pA <- pA_logit_dev(pA.toy2, pA.site ~ cell_line, pA_design, "sample", adj_method='fdr')
 #' @return
 #' Deviance test p-values (one per transcript).
 #' @export
@@ -233,7 +236,7 @@ pA_logit_dev <- function(data, model, design = NULL, sample_ID = NULL, adj_metho
     names(dtest_gfitx.df)[2] <- "p_devtest"
 
     if (adj_method != 'none'){
-        dtest_gfitx.df <- adj_p(dtest_gfitx.df, pcols = 2, adj_method = adj_method)
+        dtest_gfitx.df <- APAlog::adj_p(dtest_gfitx.df, pcols = 2, adj_method = adj_method)
     }
 
     return(dtest_gfitx.df)
@@ -298,7 +301,7 @@ volcano_plot <- function(fit, x, xlab = "Ln fold change", y, ylab = "-Log10 FDR"
 #'
 #' Transcript expression data for testing the functions
 #'
-#' @name pA.toy2
+#' @title pA.toy2
 #' @format An object of class \code{data.frame}
 #' @examples
 #' data <- Apalog:pA.toy2
@@ -310,7 +313,7 @@ volcano_plot <- function(fit, x, xlab = "Ln fold change", y, ylab = "-Log10 FDR"
 #'
 #' experimental design for testing the functions
 #'
-#' @name pA_design
+#' @title pA_design
 #' @format An object of class \code{data.frame}
 #' @examples
 #' data <- Apalog:pA_design

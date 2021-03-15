@@ -1,4 +1,4 @@
-![Logo-r](https://github.com/goodarzilab/APAlog/blob/master/data/APALog%20_logo3.png)
+![Logo-r](https://github.com/goodarzilab/APAlog/blob/master/APALog%20_logo3.png)
 
 # APAlog: A tool for quantification of alternative poly A site usage
 
@@ -139,7 +139,7 @@ APAlog::volcano_plot(fit.op_HNRNPC,
                      ylim=c(0,2))
 ```
 
-![volcano_1](./data/volcano_1.png)
+![volcano_1](./volcano_1.png)
 
 ## Multinomial test
 
@@ -182,7 +182,7 @@ APAlog::volcano_plot(fit.m_HNRNPC_fdr,
                      ylim=c(0,2))
 ```
 
-![volcano_1](./data/volcano_2.png)
+![volcano_1](./volcano_2.png)
 
 ## Output interpretation
 

@@ -6,12 +6,12 @@ Authors@R:
            family = "Asgharian",
            role = c("aut"),
            email = "hossein.asgharian@gmail.com",
-           comment = c(ORCID = "https://orcid.org/0000-0001-7085-5045")),
+           comment = c(ORCID = "0000-0001-7085-5045")),
     person(given = "Sohit",
            family = "Miglani",
            role = c("cre"),
            email = "sohitmiglani@gmail.com",
-           comment = c(ORCID = "https://orcid.org/0000-0002-8075-320X")))
+           comment = c(ORCID = "0000-0002-8075-320X")))
 Description: Many trancripts in human and other organisms have multiple potential poly A sites.
   Selection of different poly A sites affects the composition of 3' UTR and the the regulatory elements it contains,
   and may impact several aspects of mRNA life cycle e.g. stability and translation rate. The APAlog package tests
