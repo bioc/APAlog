@@ -97,7 +97,7 @@ pA_multi_logit <- function(data, model, design = NULL, sample_ID = NULL, long_ou
 #' A dataframe containing log ratios (logistic regression coefficients), SE, z and p-values plus the names of
 #' ref and alt pA sites.
 #' @examples
-#' outxl <- APAlog::pA_logit_1tr_pairs(y, model))
+#' outxl <- APAlog::pA_logit_1tr_pairs(y, model)
 #' @export
 
 pA_logit_1tr_pairs <- function(xdd, model){
