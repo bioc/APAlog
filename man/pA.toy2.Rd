@@ -17,6 +17,6 @@ Toy transcript expression data
 Transcript expression data for testing the functions
 }
 \examples{
-data <- Apalog:pA.toy2
+data <- APAlog::pA.toy2
 }
 \keyword{datasets}

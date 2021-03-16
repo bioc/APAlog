@@ -276,7 +276,9 @@ remove_0_1_pA_transcripts <- function(data){
 #' @return A volcano plot visualisation
 #' @details A visualisation of the volcano plot resulting from the p-values and log fold change
 #' @examples
-#' vplot <- volcano_plot(fit1, x='logfdr', y='p_values')
+#' vplot <- volcano_plot(fit1, x='logfdr', y='p_values', xlab = "Ln fold change", ylab = "-Log10 FDR",
+#' title = "LMCN data, metastatic vs non-metastatic", titleLabSize = 12, border = "full",
+#' pCutoff = 0.001, FCcutoff = 1.5, xlim = c(-5, 5), ylim = c(0, 10) )
 #' @export
 
 volcano_plot <- function(fit, x, xlab = "Ln fold change", y, ylab = "-Log10 FDR",
@@ -304,7 +306,7 @@ volcano_plot <- function(fit, x, xlab = "Ln fold change", y, ylab = "-Log10 FDR"
 #' @title pA.toy2
 #' @format An object of class \code{data.frame}
 #' @examples
-#' data <- Apalog:pA.toy2
+#' data <- APAlog::pA.toy2
 "pA.toy2"
 
 

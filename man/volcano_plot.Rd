@@ -36,5 +36,7 @@ Function to make the volcano plot from the p-values matrix
 A visualisation of the volcano plot resulting from the p-values and log fold change
 }
 \examples{
-vplot <- volcano_plot(fit1, x='logfdr', y='p_values')
+vplot <- volcano_plot(fit1, x='logfdr', y='p_values', xlab = "Ln fold change", ylab = "-Log10 FDR",
+title = "LMCN data, metastatic vs non-metastatic", titleLabSize = 12, border = "full",
+pCutoff = 0.001, FCcutoff = 1.5, xlim = c(-5, 5), ylim = c(0, 10))
 }
