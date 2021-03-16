@@ -272,7 +272,16 @@ remove_0_1_pA_transcripts <- function(data){
 #' @description Function to make the volcano plot from the p-values matrix
 #' @param fit Output dataframe of the pA_logit_dev or pA_multi_logit function
 #' @param x Name of the column in the dataframe that contains the log fold change
+#' @param xlab Label of the column in the dataframe that contains the log fold change
 #' @param y Name of the column in the dataframe that contains the corrected p-values
+#' @param ylab Label of the column in the dataframe that contains the corrected p-values
+#' @param title Title of the Volcano Plot
+#' @param titleLabSize Size of the title of the volcano plot
+#' @param border Width of the borders used
+#' @param pCutoff Cutoff for the p-values
+#' @param FCcutoff Cutoff for the log fold change values
+#' @param xlim Limit of values on x-axis
+#' @param ylim Limit of values on y-axis
 #' @return A volcano plot visualisation
 #' @details A visualisation of the volcano plot resulting from the p-values and log fold change
 #' @examples

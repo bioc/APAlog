@@ -24,7 +24,25 @@ volcano_plot(
 
 \item{x}{Name of the column in the dataframe that contains the log fold change}
 
+\item{xlab}{Label of the column in the dataframe that contains the log fold change}
+
 \item{y}{Name of the column in the dataframe that contains the corrected p-values}
+
+\item{ylab}{Label of the column in the dataframe that contains the corrected p-values}
+
+\item{title}{Title of the Volcano Plot}
+
+\item{titleLabSize}{Size of the title of the volcano plot}
+
+\item{border}{Width of the borders used}
+
+\item{pCutoff}{Cutoff for the p-values}
+
+\item{FCcutoff}{Cutoff for the log fold change values}
+
+\item{xlim}{Limit of values on x-axis}
+
+\item{ylim}{Limit of values on y-axis}
 }
 \value{
 A volcano plot visualisation
@@ -36,6 +54,8 @@ Function to make the volcano plot from the p-values matrix
 A visualisation of the volcano plot resulting from the p-values and log fold change
 }
 \examples{
+fit1 <- pA_multi_logit(APAlog::pA.toy2, pA.site ~ cell_line, APAlog::pA_design, "sample", adj_method='fdr')
+
 vplot <- volcano_plot(fit1, x='logfdr', y='p_values', xlab = "Ln fold change", ylab = "-Log10 FDR",
 title = "LMCN data, metastatic vs non-metastatic", titleLabSize = 12, border = "full",
 pCutoff = 0.001, FCcutoff = 1.5, xlim = c(-5, 5), ylim = c(0, 10))
