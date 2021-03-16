@@ -56,7 +56,7 @@ A visualisation of the volcano plot resulting from the p-values and log fold cha
 \examples{
 fit1 <- pA_multi_logit(APAlog::pA.toy2, pA.site ~ cell_line, APAlog::pA_design, "sample", adj_method='fdr')
 
-vplot <- volcano_plot(fit1, x='logfdr', y='p_values', xlab = "Ln fold change", ylab = "-Log10 FDR",
+vplot <- volcano_plot(fit1, x='b_cell_lineMDA_sgHNRNPC', y='p_cell_lineMDA_sgHNRNPC', xlab = "Ln fold change", ylab = "-Log10 FDR",
 title = "LMCN data, metastatic vs non-metastatic", titleLabSize = 12, border = "full",
 pCutoff = 0.001, FCcutoff = 1.5, xlim = c(-5, 5), ylim = c(0, 10))
 }
