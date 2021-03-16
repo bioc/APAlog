@@ -17,6 +17,6 @@ Toy experimental design
 experimental design for testing the functions
 }
 \examples{
-data <- Apalog:pA_design
+data <- APAlog::pA_design
 }
 \keyword{datasets}

@@ -318,5 +318,5 @@ volcano_plot <- function(fit, x, xlab = "Ln fold change", y, ylab = "-Log10 FDR"
 #' @title pA_design
 #' @format An object of class \code{data.frame}
 #' @examples
-#' data <- Apalog:pA_design
+#' data <- APAlog::pA_design
 "pA_design"
